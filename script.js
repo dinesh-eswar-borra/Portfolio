@@ -39,15 +39,18 @@ document.addEventListener('mouseenter', () => {
 });
 
 // Carousel Functionality - Enhanced
-let currentSlide = 0;
 const carousel = document.getElementById('projectsCarousel');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const carouselDots = document.getElementById('carouselDots');
 
-// Get total number of cards
-const projectCards = carousel.querySelectorAll('.project-card');
-const totalSlides = projectCards.length;
+if (carousel) {
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const carouselDots = document.getElementById('carouselDots');
+
+    const projectCards = carousel.querySelectorAll('.project-card');
+    const totalSlides = projectCards.length;
+
+    // ALL carousel code goes inside this block
+}
 
 // Create dots
 function createDots() {
