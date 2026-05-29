@@ -173,8 +173,8 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
     emailjs.send(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        "service_d01jr6r",
+        "template_a5bpt2s",
         {
             name: document.getElementById("name").value,
             email: document.getElementById("email").value,
@@ -186,7 +186,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         this.reset();
     })
     .catch((error) => {
-        console.error(error);
+        console.error("EmailJS Error:", error);
         alert("Failed to send message.");
     });
 });
