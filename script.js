@@ -171,20 +171,24 @@ hamburger.addEventListener('click', () => {
 // Contact form submission
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    
-    // Get form values
-    const formData = {
-        name: this.querySelector('input[type="text"]').value,
-        email: this.querySelector('input[type="email"]').value,
-        message: this.querySelector('textarea').value
-    };
-    
-    // Simulate form submission (you can replace this with actual backend call)
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I\'ll get back to you soon.');
-    
-    // Reset form
-    this.reset();
+
+    emailjs.send(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            message: document.getElementById("message").value
+        }
+    )
+    .then(() => {
+        alert("Message sent successfully!");
+        this.reset();
+    })
+    .catch((error) => {
+        console.error(error);
+        alert("Failed to send message.");
+    });
 });
 
 // Scroll animations
